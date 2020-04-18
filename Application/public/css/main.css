@@ -26,6 +26,7 @@ main.index {
 .container.features {
     display: flex;
     flex-direction: column;
+    width: 100%;
 }
 
 .auth-container {
