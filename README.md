@@ -92,7 +92,7 @@ Register yourself as a new user
 
 Log in using your newly created credentials
 
-####Physical Stat Generator
+#### Physical Stat Generator
 
 Click on the Hamburger Menu and select Physical Stat Generator
 
