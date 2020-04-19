@@ -60,7 +60,9 @@ Siddharth. (2016, October 28). How to Implement an Agile Development Process in 
 
 This project uses a MySQL Database, and you will need to import my database to review the site functionality.
 
-From MySQL Workbench, log in to your database.
+Use MySQL Workbench to create a new database called ancientwhitearmyvet
+
+From MySQL Workbench, log in to MySQL.
 
 From the menu at the top, go to Server > Data Import
 
