@@ -53,3 +53,67 @@ Quality assurance tests should be run to ensure the final website performs as ex
 ## References -
 
 Siddharth. (2016, October 28). How to Implement an Agile Development Process in a Few Easy Steps. Retrieved from Snyxius.com: https://www.snyxius.com/implement-agile-development-process-easy-steps/
+
+## Instructions for review
+
+### Database Installation
+
+This project uses a MySQL Database, and you will need to import my database to review the site functionality.
+
+From MySQL Workbench, log in to your database.
+
+From the menu at the top, go to Server > Data Import
+
+Under Import Options, select the repository folder Database/Dump20200418
+
+From the tabs at the top, click on Import Progress
+
+Click on the Start Import button.
+
+### Starting the Application
+
+In VS Code, right-click on the Application folder and select Open in Terminal
+
+Split the screen
+
+In Window 1 type cd ../web-server and press Enter
+
+In each window, type npm install and press enter
+
+In each window, type npm start and press enter
+
+### Testing the Application
+
+In your browser, navigate to http://localhost:4000
+
+#### Auth test
+
+Register yourself as a new user
+
+Log in using your newly created credentials
+
+####Physical Stat Generator
+
+Click on the Hamburger Menu and select Physical Stat Generator
+
+Select a race and click on the Calculate Characteristics button
+
+#### Ability Generator
+
+Click on the Hamburger Menu and select Ability Generator
+
+Click on the Calculate Abilities button
+
+#### Pre-Generated Characters
+
+Click on the Hamburger Menu and select Pre-Generated Characters
+
+I have only created characters for Level 9, so you should limit your level selection to 9th Level.
+
+Select a Class and 9th Level
+
+To view a character sheet, click the Download button for your desired character.
+
+#### Logging Our
+
+Click on the Hamburger Menu and select Log Off
