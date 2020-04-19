@@ -32,8 +32,12 @@ main.index {
 .auth-container {
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
+    justify-content: center;
     margin: 25px;
+}
+
+.auth {
+    padding: 50px;
 }
 
 .auth label {
