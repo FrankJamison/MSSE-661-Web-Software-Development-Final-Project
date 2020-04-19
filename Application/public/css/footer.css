@@ -6,6 +6,7 @@ footer {
     height: 90px;
     width: 100%;
     background-image: url(../images/dark_leather.png);
+    margin-top: 25px;
 }
 
 .copyright {
