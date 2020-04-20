@@ -66,7 +66,7 @@ From MySQL Workbench, log in to MySQL.
 
 From the menu at the top, go to Server > Data Import
 
-Under Import Options, select the repository folder Database/Dump20200418
+Under Import Options, select the repository folder Database/Dump20200419
 
 From the tabs at the top, click on Import Progress
 
