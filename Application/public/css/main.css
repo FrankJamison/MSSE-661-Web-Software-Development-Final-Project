@@ -29,6 +29,10 @@ main.index {
     width: 100%;
 }
 
+.features-item {
+    padding: 0 50px;
+}
+
 .auth-container {
     display: flex;
     flex-direction: row;
@@ -71,5 +75,14 @@ main.index {
 .calculated-stats,
 .calculated-abilities {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
+}
+
+@media screen and (max-width: 60em) {
+
+    .auth-container,
+    .calculated-abilities,
+    .calculated-stats {
+        flex-direction: column;
+    }
 }
