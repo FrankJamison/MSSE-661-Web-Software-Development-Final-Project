@@ -16,6 +16,7 @@ $(document).ready(function () {
     });
 });
 
+/* Imports character data from the races.js file based on character race. */
 function prepCharacter(race) {
     if (race === "Aarakocra") {
         character.Race = aaracokra.Race;
@@ -514,7 +515,7 @@ function prepCharacter(race) {
         character.WeightModifier = yuan_ti_pureblood.WeightModifier;
     }
 }
-
+/* Calculates the range of possibility for each character based on character race */
 function getCharacteristicRanges() {
     character.MiddleAge = Math.round((character.MaxAge - character.AdultAge) / 4) + character.AdultAge;
     character.OldAge = Math.round((character.MaxAge - character.AdultAge) / 2) + character.AdultAge;
@@ -525,6 +526,7 @@ function getCharacteristicRanges() {
     character.MaxWeight = character.BaseWeight + (getMaxRoll(character.HeightModifier) * getMaxRoll(character.WeightModifier));
 }
 
+/* Returns the minimum roll based on the number of dice rolled */
 function getMinRoll(modifier) {
     var result = 0;
     var roll = modifier.split("d");
@@ -534,6 +536,7 @@ function getMinRoll(modifier) {
     return dieCount * 1;
 }
 
+/* returns the maximum value based on the number of dice rolled and the number of sides on the dice rolled. */
 function getMaxRoll(modifier) {
     var result = 0;
     var roll = modifier.split("d");
@@ -543,6 +546,7 @@ function getMaxRoll(modifier) {
     return dieCount * numSides;
 }
 
+/*Returns the value of a random dice roll */
 function rollDice(modifier) {
 
     var result = 0;
@@ -557,6 +561,7 @@ function rollDice(modifier) {
     return result;
 }
 
+/* Converts height from inches to feet */
 function convertInchesToFeet(heightInInches) {
     var feet = Math.floor(heightInInches / 12);
     var inches = heightInInches % 12;
@@ -579,6 +584,7 @@ function getRandomWeight() {
     return character.BaseWeight + (character.HeightModRoll * rollDice(character.WeightModifier));
 }
 
+/* Builds a paragraph listing the randomly generated statistics */
 function displayCharacteristics() {
     $("#characteristics").html(
         "<p>Age: " + character.age + " years</p>" +
@@ -587,6 +593,7 @@ function displayCharacteristics() {
     )
 }
 
+/* Builds a paragraph listing the range of possibilities for each stat. */
 function displayCharacteristicRanges() {
     html = "";
 

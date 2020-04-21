@@ -1,3 +1,5 @@
+/* Racial characteristics */
+
 var character = {
     // Character Baseline
     Race: "",

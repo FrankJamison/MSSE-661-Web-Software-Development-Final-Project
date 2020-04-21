@@ -19,6 +19,11 @@ class CharacterList {
         return ul;
     };
 
+    /**
+     *Gets the currently selected class from the form so that the displayed results can be filtered.
+     *
+     * @memberof CharacterList
+     */
     getRequestedCharacterClass = () => {
         const classSelect = document.getElementById('class');
         const classOptions = classSelect.options;
@@ -27,6 +32,11 @@ class CharacterList {
         return classStatus;
     }
 
+    /**
+     *  Gets the currently selected character level from th eform so that the displayed results can be filteres
+     *
+     * @memberof CharacterList
+     */
     getRequestedCharacterLevel = () => {
         const levelSelect = document.getElementById('level');
         const levelOptions = levelSelect.options;
@@ -35,27 +45,9 @@ class CharacterList {
         return levelStatus;
     }
 
-    // _deleteEventHandler = (characterId) => async () => {
-    //     if (characterId) {
-    //         const res = await deleteCharacter(characterId);
-
-    //         if (res !== null) {
-    //             this.characters = this.characters.filter((character) => character.character_id !== characterId);
-    //             const character = document.getElementById(`character-${characterId}`);
-    //             character.remove();
-
-    //             if (!this.characters.length) {
-    //                 const div = document.getElementById('characters');
-    //                 const loadingDiv = div.childNodes[1];
-    //                 const errDiv = this.generateErrorMsg('Create some new characters!');
-    //                 div.replaceChild(errDiv, loadingDiv);
-    //             }
-    //         }
-    //     }
-    // };
-
     /**
      * Builds the character card.
+     * 
      * @example
      * <li class="character-item">
      *   <div class="character-card">
@@ -81,27 +73,33 @@ class CharacterList {
         characterCard.className = 'character-card';
 
         const characterImage = document.createElement('div');
+
+        /* Dynamically reates the link for the character image using information from the database */
         characterImage.className = 'character-image';
         characterImage.innerHTML = '<img src="./images/characters/' + character.character_image + '" alt="' + character.character_name + '" />';
 
         const characterContent = document.createElement('div');
         characterContent.className = 'character-content';
 
+        /* Dynamically pulls the character name from teh database */
         const characterName = document.createElement('h2');
         characterName.className = 'character-name';
         const characterNameText = document.createTextNode(character.character_name);
         characterName.appendChild(characterNameText);
 
+        /* Dynamically pulls the class, level, and build from the database */
         const characterClass = document.createElement('h3');
         characterClass.className = 'character-class';
         const characterClassText = document.createTextNode(character.character_class + ' ' + character.character_level + ': ' + character.character_build);
         characterClass.appendChild(characterClassText);
 
+        /* Dynamically pulls the character race from the database. */
         const characterRace = document.createElement('p');
         characterRace.className = 'character-race';
         const characterRaceText = document.createTextNode(character.character_race);
         characterRace.appendChild(characterRaceText);
 
+        /* Dynamically creates the link to the character sheet pdf using data stored in the database */
         const characterSheet = document.createElement('a');
         characterSheet.className = 'character-sheet';
         const characterSheetLink = './pdf/characters/' + character.character_level + '/' + character.character_sheet;
@@ -118,6 +116,7 @@ class CharacterList {
         characterCard.appendChild(characterContent);
         characterItem.appendChild(characterCard);
 
+        /* Hides all characters not meeting the currently selected class and level */
         if (character.character_class.toString() != this.getRequestedCharacterClass() || character.character_level.toString() != this.getRequestedCharacterLevel()) {
             characterItem.style.display = "none";
         } else {
