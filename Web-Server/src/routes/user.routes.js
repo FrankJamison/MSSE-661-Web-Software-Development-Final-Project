@@ -1,8 +1,5 @@
 const express = require('express');
-const {
-    getMe,
-    updateMe
-} = require('../controllers/user.controller');
+const { getMe, updateMe } = require('../controllers/user.controller');
 const canAccess = require('../middleware/auth.middleware');
 
 const userRoutes = express.Router();

@@ -2,8 +2,8 @@ const jwt = require('jsonwebtoken');
 
 // jwt secrets for initial token and refresh tokens
 const jwtconfig = {
-    access: 'reallysecretaccesssecret',
-    refresh: 'reallysecretrefreshsecret',
+  access: 'reallysecretaccesssecret',
+  refresh: 'reallysecretrefreshsecret',
 };
 
 // store for refresh tokens created
@@ -19,32 +19,25 @@ const refreshTokens = [];
  */
 // create a new auth token
 const generateAccessToken = (id, expiresIn) =>
-    jwt.sign({
-        id
-    }, jwtconfig.access, expiresIn);
+  jwt.sign({ id }, jwtconfig.access, expiresIn);
 
 // create a new re-auth token
 const generateRefreshToken = (id, expiresIn) =>
-    jwt.sign({
-        id
-    }, jwtconfig.refresh, expiresIn);
+  jwt.sign({ id }, jwtconfig.refresh, expiresIn);
 
 // check token validity
 const verifyToken = (token, secret, req, res) => {
-    try {
-        return jwt.verify(token, secret);
-    } catch {
-        res.status(500).send({
-            auth: false,
-            message: 'Invalid token.'
-        });
-    }
+  try {
+    return jwt.verify(token, secret);
+  } catch {
+    res.status(500).send({ auth: false, message: 'Invalid token.' });
+  }
 };
 
 module.exports = {
-    jwtconfig,
-    refreshTokens,
-    generateAccessToken,
-    generateRefreshToken,
-    verifyToken,
+  jwtconfig,
+  refreshTokens,
+  generateAccessToken,
+  generateRefreshToken,
+  verifyToken,
 };

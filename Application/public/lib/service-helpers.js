@@ -26,7 +26,7 @@ const OPTIONS_WITH_AUTH = {
  * @param {sting} url - address to make request to
  * @param {any} options - additional options to send. Defaults to options with auth headers
  */
-const _get = async (url, options = DEFAULT_OPTIONS) => {
+const _get = async (url, options = DEFAULT_OPTIONS_WITH_AUTH) => {
     const res = await fetch(url, {
         method: 'GET',
         ...options,

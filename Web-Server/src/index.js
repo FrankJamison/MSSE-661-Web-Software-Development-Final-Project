@@ -5,10 +5,11 @@ const bodyParser = require('body-parser');
 
 const authRoutes = require('./routes/auth.routes');
 const userRoutes = require('./routes/user.routes');
+const tasksRoutes = require('./routes/tasks.routes');
 const characterRoutes = require('./routes/character.routes');
 const {
-    error404,
-    error500
+  error404,
+  error500
 } = require('./middleware/errors.middleware');
 
 const app = express();
@@ -18,12 +19,12 @@ const env = process.env.NODE_ENV;
 
 // Middleware - logs server requests to console
 if (env !== 'test') {
-    app.use(logger(logLevel));
+  app.use(logger(logLevel));
 }
 
 // Middleware - parses incoming requests data (https://github.com/expresssrc/body-parser)
 app.use(bodyParser.urlencoded({
-    extended: false
+  extended: false
 }));
 app.use(bodyParser.json());
 
@@ -37,7 +38,8 @@ app.use(cors());
 // Partial API endpoints
 app.use('/api/auth', authRoutes); // http://localhost:3000/api/auth
 app.use('/api/user', userRoutes); // http://localhost:3000/api/users
-app.use('/api/characters', characterRoutes); // http://localhost:3000/api/characters
+app.use('/api/tasks', tasksRoutes); // http://localhost:3000/api/tasks
+app.use('/api/characters', characterRoutes);
 
 // Handle 404 requests
 app.use(error404);
@@ -47,5 +49,5 @@ app.use(error500);
 
 // listen on server port
 app.listen(port, () => {
-    console.log(`Running on port: ${port}...`);
+  console.log(`Running on port: ${port}...`);
 });

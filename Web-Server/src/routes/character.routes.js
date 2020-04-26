@@ -1,7 +1,6 @@
 const express = require('express');
 const {
     getAllCharacters,
-    getClassCharacters,
     createCharacter,
     getCharacter,
     updateCharacter,
@@ -17,14 +16,9 @@ const characterRoutes = express.Router();
  */
 
 /**
- * Routes for all characters. Evaluates to `/characters/`.
+ * Routes for all characterss. Evaluates to `/characters/`.
  */
-characterRoutes
-    .get('/', canAccess, getAllCharacters).post('/', canAccess, createCharacter);
-
-// /characters/:characterClass/:characterLevel
-characterRoutes
-    .get('/:characterClass/:characterLevel', canAccess, getClassCharacters);
+characterRoutes.get('/', canAccess, getAllCharacters).post('/', canAccess, createCharacter);
 
 /**
  * Routes for a character by id. Evalutes to `/characters/:characterId`.
