@@ -116,6 +116,24 @@ Select a Class and 9th Level
 
 To view a character sheet, click the Download button for your desired character.
 
+#### Add/Delete Characters
+
+While logged in, navigate to http://localhost:4000/pregen-characters-add.html.
+
+To add a character, fill out the form on the page...
+
+When adding a PDF file, place it in the file directory /public/pdf/[level number]/ folder.
+
+When adding an image, place the image in the /public/images/characters/ folder and ensure the image size is 400x400.
+
+Once added, go back to the pre-gen page and look up your new character.
+
+To delete a character, go back to http://localhost:4000/pregen-characters-add.html..
+
+Find the character you want to delete and click of the delete button.
+
+Return to the pre-gen page and verify your character is gone.
+
 #### Logging Our
 
 Click on the Hamburger Menu and select Log Off
